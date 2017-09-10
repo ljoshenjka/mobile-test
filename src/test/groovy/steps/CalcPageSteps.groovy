@@ -17,12 +17,15 @@ class CalcPageSteps {
         Assert.assertTrue(CalcPage.isAppOpen())
     }
 
-    @When('^user press ADD button$')
-    void user_press_button() throws Throwable {
-        CalcPage.clickButton("ADD")
+    @When('^user press (.*) button (.*) times$')
+    void user_press_button(String button, int count) throws Throwable {
+        for (int i = 0; i < count; i++) {
+            CalcPage.clickButton(button)
+        }
     }
 
-    @Then('^the result should be increased by (\\d+)$')
-    void the_result_should_be_increased_by(int i) throws Throwable {
+    @Then('^the result should be (.*)$')
+    void the_result_should_be_increased_by(int expectedResult) throws Throwable {
+        Assert.assertEquals(expectedResult, CalcPage.checkResult())
     }
 }

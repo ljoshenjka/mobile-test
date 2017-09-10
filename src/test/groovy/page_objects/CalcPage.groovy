@@ -18,11 +18,24 @@ class CalcPage extends BasePage {
                 break
             case "SUBTRACT" : CalcPage_DOM.subButton.click()
                 break
+            case "SQUARE ROOT" : CalcPage_DOM.sqrtButton.click()
+                break
+            case "DIVIDE by 2" : CalcPage_DOM.divButton.click()
+                break
+            case "MULTIPLY by 2" : CalcPage_DOM.multButton.click()
+                break
+            case "POWER by 2" : CalcPage_DOM.powerButton.click()
+                break
                 default: System.out.println("No such button")
         }
     }
 
-    static isAppOpen() {
+    static boolean isAppOpen() {
         CalcPage_DOM.calcTitle.text.equalsIgnoreCase("Wonky calculator app")
+    }
+
+    static Integer checkResult() {
+        String result = CalcPage_DOM.result.text.substring(8)
+        result.toInteger()
     }
 }
