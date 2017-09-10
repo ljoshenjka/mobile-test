@@ -30,12 +30,16 @@ class CalcPage extends BasePage {
         }
     }
 
-    static boolean isAppOpen() {
+    static isAppOpen() {
         CalcPage_DOM.calcTitle.text.equalsIgnoreCase("Wonky calculator app")
     }
 
-    static Integer checkResult() {
+    static checkResult() {
         String result = CalcPage_DOM.result.text.substring(8)
-        result.toInteger()
+        try {
+            result.toDouble()
+        } catch (NumberFormatException e) {
+            e.getMessage()
+        }
     }
 }

@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = "@test", plugin = [
+@CucumberOptions(tags = "@smoke", plugin = [
         "html:build/cucumber/html", "json:build/cucumber/json/report.json", "pretty"])
 class TestRunner {
 }

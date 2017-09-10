@@ -1,5 +1,6 @@
 package steps
 
+import cucumber.api.java.en.And
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
@@ -25,7 +26,8 @@ class CalcPageSteps {
     }
 
     @Then('^the result should be (.*)$')
-    void the_result_should_be_increased_by(int expectedResult) throws Throwable {
-        Assert.assertEquals(expectedResult, CalcPage.checkResult())
+    void the_result_should_be_increased_by(double expectedResult) throws Throwable {
+        Assert.assertEquals(expectedResult, CalcPage.checkResult(), 1e-15)
     }
+
 }
