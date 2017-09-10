@@ -1,0 +1,28 @@
+group 'test'
+version '1.0'
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile (
+            'io.appium:java-client:4.1.2',
+            'info.cukes:cucumber-java:1.2.5',
+            'info.cukes:cucumber-groovy:1.2.5'
+    )
+
+    testCompile (
+            'junit:junit:4.12',
+            'org.spockframework:spock-core:1.0-groovy-2.4',
+            'info.cukes:cucumber-junit:1.2.5'
+    )
+}
+
+test {
+    systemProperty "cucumber.options", System.properties.getProperty("cucumber.options")
+}

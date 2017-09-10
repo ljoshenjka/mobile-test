@@ -1,0 +1,21 @@
+.DS_Store
+bin/**
+tmp/**
+tmp/**/*
+local.properties
+.classpath
+.settings/
+.loadpath
+*.launch
+.project
+.metadata
+/target
+.gradle
+/build
+
+# IDEA
+out/**
+.idea/**
+*.iml
+*.ipr
+*.iws
