@@ -25,7 +25,7 @@ class Hooks {
     def timeout = Integer.parseInt(env.getProperty("defaultTimeout"))
     def appActivity = env.getProperty("appActivity")
     def appPackage = env.getProperty("appPackage")
-    def app = env.getProperty("app")
+    def app = System.getProperty("user.dir") + env.getProperty("app")
 
     // TODO: implement config handler for different platform drivers (iOS/Android/Win)
 
